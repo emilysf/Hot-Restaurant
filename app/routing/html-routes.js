@@ -1,12 +1,18 @@
 // ROUTES:
-app.get('/', function(req, res){
-	res.sendFile(path.join(__dirname + '/home.html'));
-})
+var path = require('path');
 
-app.get('/reserve', function(req, res){
-	res.sendFile(path.join(__dirname + '/reserve.html'));
-})
+module.exports = function(app) {
 
-app.get('/tables', function(req, res){
-	res.sendFile(path.join(__dirname + '/tables.html'));
-})
+	app.get('/', function(req, res){
+		res.sendFile(path.join(__dirname + '/../public/home.html'));
+	})
+
+	app.get('/reserve', function(req, res){
+		res.sendFile(path.join(__dirname + '/../public/reserve.html'));
+	})
+
+	app.get('/tables', function(req, res){
+		res.sendFile(path.join(__dirname + '/../public/tables.html'));
+	})
+
+};
