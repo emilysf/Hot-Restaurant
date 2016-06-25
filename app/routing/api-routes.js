@@ -1,23 +1,14 @@
 // all currentReservations - provides JSON
-app.get('/api/:currentReservations?', function(req, res){
+var tableData = require('../data/table-data.js');
 
-	var chosen = req.params.currentReservations;
+var path = require('path');
 
-	if(chosen){
-		console.log(chosen);
+module.exports = function(app) {
 
-		for (var i=0; i <currentReservations.length; i++){
+    app.get('/api/tables', function(req, res) {
 
-			if (chosen == currentReservations[i].routeName){
-				res.json(currentReservations[i]);
-				return;
-			}
-		}
+        res.json(tableData);
 
-		res.json(false);
-	}
+      })
 
-	else{
-		res.json(currentReservations);
-	}
-})
+    };
