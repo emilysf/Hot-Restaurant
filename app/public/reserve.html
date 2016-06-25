@@ -62,27 +62,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript">
-		
-		// Question: What does this code do? 
-		$('#addBtn').on("click", function(){
-			var newCharacter = 
-			{
-				name: $("#name").val().trim(),
-				role: $("#role").val().trim(),
-				age: $("#age").val().trim(),
-				forcePoints: $("#forcepoints").val().trim()
-			};
-			var currentURL = window.location.origin;
-			// Question: What does this code do??
-			$.post( currentURL + "/api/new", newCharacter)
-				.done(function(data){
-					console.log(data);
-					alert("Adding character...")
-				})
-			return false;
-		});	
-	</script>
+	<!-- <script type="text/javascript" src="../js/reserve-logic.js"></script> -->
 
 </body>
 </html>

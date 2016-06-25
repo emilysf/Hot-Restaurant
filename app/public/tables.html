@@ -57,49 +57,7 @@
 		</div>
 	
 
-	<script type="text/javascript">
-		
-		// Question: What does this code do? 
-		$('#addBtn').on("click", function(){
-			var newCharacter = 
-			{
-				name: $("#name").val().trim(),
-				role: $("#role").val().trim(),
-				age: $("#age").val().trim(),
-				forcePoints: $("#forcepoints").val().trim()
-			};
-			var currentURL = window.location.origin;
-			// Question: What does this code do??
-			$.post( currentURL + "/api/new", newCharacter)
-				.done(function(data){
-					console.log(data);
-					alert("Adding character...")
-				})
-			return false;
-		});	
-	</script>
-
-
-
-			
-
-	<script type="text/javascript">
-		
-		var currentURL = window.location.origin;
-		console.log(currentURL + "/api");
-		$.get(currentURL + "/api", function(data){
-			for (var i =0; i < data.length; i++){
-				var wellSection = $("<div>");
-				wellSection.addClass('well');
-				wellSection.attr('id', 'characterWell-' + i)
-				$('#wellSection').append(wellSection);				
-				$("#characterWell-" + i).append("<h2>" + data[i].name + "</h2>");
-				$("#characterWell-" + i).append("<h3>Role: " + data[i].role + "</h4>");
-				$("#characterWell-" + i).append("<h3>Age: " + data[i].age + "</h4>");
-				$("#characterWell-" + i).append("<h3>Force Points: " + data[i].forcePoints + "</h4>");	
-			}
-		})
-	</script>
+	<!-- <script type="text/javascript" src="../js/tables-logic.js"></script> -->
 
 </body>
 </html>
